@@ -1,0 +1,12 @@
+name = "mpaluchowski-2019"
+license = "MIT"
+licenselink = "https://github.com/mpaluchowski/hugo-mpaluchowski-2019/blob/master/LICENSE"
+description = ""
+homepage = "https://michal.paluchowski.com/"
+tags = ["blog", "responsive", "minimal"]
+features = []
+min_version = "0.41"
+
+[author]
+  name = "Michał Paluchowski"
+  homepage = "https://michal.paluchowski.com/"
