@@ -88,11 +88,9 @@ body {
     }
 
     &__content {
-        > * {
-            margin: {
-                left: 1em;
-                right: 1em;
-            }
+        margin: {
+            left: 1em;
+            right: 1em;
         }
 
         > p:first-of-type {
@@ -109,17 +107,19 @@ body {
             padding: 1em;
         }
 
-        > p:first-of-type, img {
+        > p:first-of-type, figure {
+            box-sizing: border-box;
+            left: 50%;
             margin: {
-                left: 0;
-                right: 0;
+                left: -50vw;
+                right: -50vw;
             }
+            position: relative;
+            right: 50%;
+            width: 100vw;
         }
 
         figure {
-            margin-left: 0;
-            margin-right: 0;
-
             img {
                 max-width: 100vw;
             }
