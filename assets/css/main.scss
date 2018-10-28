@@ -61,18 +61,25 @@ body {
         text-align: center;
     }
 
+    &__categories {
+        margin: 0 auto;
+    }
+
     &__category {
         background: lighten($color__header-background, 20%);
         color: #fff;
         display: inline-block;
         padding: .2em .5em;
-        margin: 0 auto;
+
+        & + & {
+            margin-left: .4em;
+        }
     }
 
     &__title {
         color: #000;
         font: 400 2.4em $font-family__header;
-        margin: .2em 0 1em;
+        margin: .4em 0 1em;
         text-transform: uppercase;
     }
 
@@ -115,14 +122,15 @@ body {
     }
 
     &__footer {
-        border-top: 2px solid #135e13;
         margin: 3em 1em 0;
-        padding-top: 1.4em;
     }
 
     &__author {
+        border-top: 2px solid #135e13;
+        padding: 1em 0 0;
         font-weight: 700;
         text-transform: uppercase;
+        display: inline-block;
     }
 }
 
@@ -192,6 +200,13 @@ body {
         & > *:last-child {
             margin-bottom: 0;
         }
+    }
+
+    hr {
+        border: 0;
+        border-top: 2px solid lighten($color__link, 20%);
+        margin: 2em auto;
+        width: 4em;
     }
 
     img {

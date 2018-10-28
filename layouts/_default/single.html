@@ -1,7 +1,11 @@
 {{ define "main" }}
 <article class="article">
     <header class="article__header">
-        {{ with .Params.categories }}<div class="article__category">{{ delimit . ", " }}</div>{{ end }}
+        {{ with .Params.categories }}
+        <div class="article__categories">
+            {{ range .Params.categories }}<div class="article__category">{{ . }}</div>{{ end }}
+        </div>
+        {{ end }}
         <h1 class="article__title">{{ .Title }}</h1>
         <div class="article__meta">
             <time>{{ .Date.Format "January 2, 2006" }}</time>,
