@@ -30,6 +30,10 @@
         <article class="article-crosslinks__article">
 
             <div class="article-crosslinks__title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
+            <div class="article-crosslinks__meta">
+                <time>{{ .Date.Format "January 2, 2006" }}</time>,
+                {{ .ReadingTime }} minutes to read
+            </div>
             <div class="article-crosslinks__summary text">{{ .Summary }}</div>
         </article>
         {{ end }}
