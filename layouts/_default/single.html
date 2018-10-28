@@ -22,4 +22,17 @@
         {{ end }}
     </footer>
 </article>
+<div class="article-crosslinks">
+    {{- $randomPosts := shuffle (where (where .Site.Pages "Type" "posts") "Kind" "page") | first 3 -}}
+    <div class="article-crosslinks__heading">Read another post?</div>
+    <nav class="article-crosslinks__articles">
+        {{ range $randomPosts }}
+        <article class="article-crosslinks__article">
+
+            <div class="article-crosslinks__title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
+            <div class="article-crosslinks__summary text">{{ .Summary }}</div>
+        </article>
+        {{ end }}
+    </nav>
+</div>
 {{ end }}
