@@ -6,7 +6,7 @@ $color__link: #135e13;
 $color__link-underline: $color__text--deprioritized;
 $color__text-background--highlight: #fafafa;
 $color__ui--light: darken($color__text-background--highlight, 10%);
-$color__code-background: $color__ui--light;
+$color__code-background: darken($color__text-background--highlight, 5%);
 
 $size__header-height: 3em;
 
