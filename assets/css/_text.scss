@@ -1,0 +1,121 @@
+.text {
+    h2 {
+        font-weight: 400;
+        margin: 1.4em 0 .6em;
+    }
+
+    p, li {
+        line-height: 1.421;
+    }
+
+    ul, ol {
+        padding-left: 2em;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    li {
+        & + li {
+            margin: .4em 0;
+        }
+
+        ul {
+            margin: .4em 0;
+        }
+    }
+
+    ul > li {
+        &::before {
+            background: #135e13;
+            border-radius: 50%;
+            content: "";
+            display: block;
+            height: .7em;
+            margin: .2em 0 0 -1.4em;
+            position: absolute;
+            vertical-align: middle;
+            width: .7em;
+        }
+
+        & > ul li {
+            &::before {
+                background: lighten(#135e13, 20%);
+            }
+        }
+    }
+
+    figure {
+        text-align: center;
+    }
+
+    pre {
+        background: $color__code-background;
+        padding: .2em .4em;
+        overflow-x: auto;
+    }
+
+    blockquote {
+        border-left: 4px solid lighten(#135e13, 20%);
+        padding: .4em 0 .4em 1em;
+        margin: 1em 0 1em 1em;
+
+        & > *:first-child {
+            margin-top: 0;
+        }
+
+        & > *:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    hr {
+        border: 0;
+        border-top: 2px solid lighten($color__link, 20%);
+        margin: 2em auto;
+        width: 4em;
+    }
+
+    .tweet {
+        display: flex;
+        justify-content: center;
+    }
+
+    .youtube-movie {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border:0;
+        }
+    }
+
+    a {
+        border-bottom: 1px solid $color__link-underline;
+        color: $color__link;
+        text-decoration: none;
+
+        &:hover {
+            border-width: 2px;
+            color: $color__link--hover;
+        }
+    }
+
+    code {
+        background: $color__code-background;
+        border-radius: .2em;
+        padding: .1em .2em;
+    }
+
+    pre > code {
+        padding: 0;
+    }
+}

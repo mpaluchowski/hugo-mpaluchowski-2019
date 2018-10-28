@@ -1,0 +1,32 @@
+.page-header {
+    align-items: center;
+    background: $color__header-background;
+    box-shadow: 0 0 .6em #ccc;
+    box-sizing: border-box;
+    display: flex;
+    height: $size__header-height;
+    justify-content: center;
+    padding: 0 1em;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: 100;
+
+    &__title {
+        color: #fff;
+        font: {
+            size: 1.4em;
+            weight: 400;
+        }
+        margin: 0;
+        max-width: $width__content;
+        width: 100%;
+
+        a {
+            background: #135e13;
+            color: inherit;
+            padding: .2em .4em;
+            text-decoration: none;
+        }
+    }
+}
