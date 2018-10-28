@@ -81,7 +81,7 @@ body {
     }
 
     &__content {
-        padding: {
+        margin: {
             left: 1em;
             right: 1em;
         }
@@ -115,10 +115,9 @@ body {
     }
 
     &__footer {
-        padding: {
-            left: 1em;
-            right: 1em;
-        }
+        border-top: 2px solid #135e13;
+        margin: 3em 1em 0;
+        padding-top: 1.4em;
     }
 
     &__author {

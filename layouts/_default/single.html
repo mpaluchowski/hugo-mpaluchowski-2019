@@ -13,7 +13,7 @@
     </main>
     <footer class="article__footer">
         {{ if isset .Site.Data.authors .Params.author }}
-        <div class="article__author"><span class="p-author" itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ (index .Site.Data.authors .Params.author).name }}</span></span></div>
+        <div class="article__author">By <span class="p-author" itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ (index .Site.Data.authors .Params.author).name }}</span></span></div>
         <div class="article__bio text"><p>{{ (index .Site.Data.authors .Params.author).bio | markdownify }}</p></div>
         {{ end }}
     </footer>
