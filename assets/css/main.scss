@@ -176,6 +176,7 @@ body {
 
     pre {
         background: $color__code-background;
+        padding: .2em .4em;
         overflow-x: auto;
     }
 
@@ -211,5 +212,9 @@ body {
         background: $color__code-background;
         border-radius: .2em;
         padding: .1em .2em;
+    }
+
+    pre > code {
+        padding: 0;
     }
 }
