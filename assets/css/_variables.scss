@@ -5,10 +5,11 @@ $color__footer-background: #135e13;
 $color__footer-foreground: #fff;
 $color__text: #585858;
 $color__text--deprioritized: #666;
-$color__heading: #000;
-$color__link: #135e13;
-$color__link-underline: $color__text--deprioritized;
 $color__text-background--highlight: #fafafa;
+$color__heading: #000;
+$color__link: $color__text;
+$color__link--hover: #135e13;
+$color__link-underline: darken($color__text-background--highlight, 20%);
 $color__ui--light: darken($color__text-background--highlight, 10%);
 $color__code-background: darken($color__text-background--highlight, 5%);
 
