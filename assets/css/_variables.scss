@@ -1,0 +1,17 @@
+
+$color__header-background: #135e13;
+$color__text: #585858;
+$color__text--deprioritized: #666;
+$color__link: #135e13;
+$color__link-underline: $color__text--deprioritized;
+$color__text-background--highlight: #fafafa;
+$color__ui--light: darken($color__text-background--highlight, 10%);
+$color__code-background: $color__ui--light;
+
+$size__header-height: 3em;
+
+$font-family__body: "Noto+Sans", Helvetica, Arial, sans-serif;
+$font-family__header: "Lato", Helvetica, Arial, sans-serif;
+
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans:400&subset=latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i&subset=latin-ext');
