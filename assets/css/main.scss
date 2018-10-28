@@ -157,14 +157,14 @@ body {
     ul > li {
         &::before {
             background: $color__header-background;
-            display: inline-block;
-            width: .7em;
-            height: .7em;
             border-radius: 50%;
             content: "";
-            margin-right: .7em;
+            display: block;
+            height: .7em;
+            margin: .2em 0 0 -1.4em;
+            position: absolute;
             vertical-align: middle;
-            margin-left: -1.4em;
+            width: .7em;
         }
 
         & > ul li {
