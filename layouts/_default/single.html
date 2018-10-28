@@ -1,6 +1,7 @@
 {{ define "main" }}
 <article class="article">
     <header class="article__header">
+        {{ with .Params.categories }}<div class="article__category">{{ delimit . ", " }}</div>{{ end }}
         <h1 class="article__title">{{ .Title }}</h1>
         <div class="article__meta">
             <time>{{ .Date.Format "January 2, 2006" }}</time>,
@@ -12,8 +13,8 @@
     </main>
     <footer class="article__footer">
         {{ if isset .Site.Data.authors .Params.author }}
-        <div class="article__author">Written by <span class="p-author" itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ (index .Site.Data.authors .Params.author).name }}</span></span></div>
-        <p class="article__bio text">{{ (index .Site.Data.authors .Params.author).bio | markdownify }}</p>
+        <div class="article__author"><span class="p-author" itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ (index .Site.Data.authors .Params.author).name }}</span></span></div>
+        <div class="article__bio text"><p>{{ (index .Site.Data.authors .Params.author).bio | markdownify }}</p></div>
         {{ end }}
     </footer>
 </article>

@@ -57,20 +57,27 @@ body {
 
     &__header {
         line-height: 1.2;
-        padding: 0 1em 1em;
+        padding: 3.4em 1em 1em;
+        text-align: center;
+    }
+
+    &__category {
+        background: lighten($color__header-background, 20%);
+        color: #fff;
+        display: inline-block;
+        padding: .2em .5em;
+        margin: 0 auto;
     }
 
     &__title {
         color: #000;
         font: 400 2.4em $font-family__header;
-        margin: 1em 0;
-        text-align: center;
+        margin: .2em 0 1em;
         text-transform: uppercase;
     }
 
     &__meta {
         color: $color__text--deprioritized;
-        text-align: center;
     }
 
     &__content {
@@ -78,6 +85,7 @@ body {
             left: 1em;
             right: 1em;
         }
+        position: relative;
 
         > p:first-of-type {
             background: $color__text-background--highlight;
@@ -106,8 +114,16 @@ body {
         }
     }
 
+    &__footer {
+        padding: {
+            left: 1em;
+            right: 1em;
+        }
+    }
+
     &__author {
         font-weight: 700;
+        text-transform: uppercase;
     }
 }
 
