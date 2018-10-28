@@ -3,7 +3,7 @@
     <header class="article__header">
         {{ with .Params.categories }}
         <div class="article__categories">
-            {{ range .Params.categories }}<div class="article__category">{{ . }}</div>{{ end }}
+            {{ range . }}<div class="article__category">{{ . }}</div>{{ end }}
         </div>
         {{ end }}
         <h1 class="article__title">{{ .Title }}</h1>
