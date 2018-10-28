@@ -88,11 +88,12 @@ body {
     }
 
     &__content {
-        margin: {
-            left: 1em;
-            right: 1em;
+        > * {
+            margin: {
+                left: 1em;
+                right: 1em;
+            }
         }
-        position: relative;
 
         > p:first-of-type {
             background: $color__text-background--highlight;
@@ -101,7 +102,6 @@ body {
                 style: solid;
                 width: 1px 0 1px;
             }
-            box-sizing: border-box;
             font-size: 1.2em;
             margin: {
                 bottom: 1.8em;
@@ -110,14 +110,19 @@ body {
         }
 
         > p:first-of-type, img {
-            left: 50%;
-            right: 50%;
             margin: {
-                left: -50vw;
-                right: -50vw;
+                left: 0;
+                right: 0;
             }
-            position: relative;
-            width: 100vw;
+        }
+
+        figure {
+            margin-left: 0;
+            margin-right: 0;
+
+            img {
+                max-width: 100vw;
+            }
         }
     }
 
@@ -182,6 +187,10 @@ body {
         }
     }
 
+    figure {
+        text-align: center;
+    }
+
     pre {
         background: $color__code-background;
         padding: .2em .4em;
@@ -209,8 +218,9 @@ body {
         width: 4em;
     }
 
-    img {
-        max-width: 100vw;
+    .tweet {
+        display: flex;
+        justify-content: center;
     }
 
     a {
