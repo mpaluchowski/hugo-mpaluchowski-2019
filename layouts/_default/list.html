@@ -1,0 +1,7 @@
+{{ define "main" }}
+{{ range .Pages }}
+<ul>
+    <li><a href="{{ .RelPermalink }}">{{ .Title }}</a> {{ .WordCount }}</li>
+</ul>
+{{ end }}
+{{ end }}
