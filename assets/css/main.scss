@@ -142,6 +142,10 @@ body {
         margin: 3em 1em 0;
     }
 
+    &__topics {
+        margin-top: 2em;
+    }
+
     &__author {
         border-top: 2px solid #135e13;
         color: $color__heading;
@@ -153,6 +157,32 @@ body {
 
     &__other {
         margin-top: 2em;
+    }
+}
+
+.topics {
+    &__heading {
+        color: $color__heading;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    &__list {
+        list-style: none;
+        margin: .4em 0 0;
+        padding: 0;
+    }
+
+    &__topic {
+        background: lighten(#135e13, 20%);
+        display: inline-block;
+        margin: 0 .4em .4em 0;
+        padding: .2em .5em;
+
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
     }
 }
 

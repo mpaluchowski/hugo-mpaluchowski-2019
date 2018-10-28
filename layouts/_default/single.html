@@ -20,6 +20,18 @@
         <div class="article__author">By <span class="p-author" itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ (index .Site.Data.authors .Params.author).name }}</span></span></div>
         <div class="article__bio text"><p>{{ (index .Site.Data.authors .Params.author).bio | markdownify }}</p></div>
         {{ end }}
+
+        {{ if .Params.tags }}
+        <nav class="article__topics topics">
+            <div class="topics__heading">Topics</div>
+            <ul class="topics__list">
+                {{ range $term := sort .Params.tags -}}
+                {{ with $.Site.GetPage (printf "/tags/%s" $term | urlize) }}<li class="topics__topic"><a href="{{ .RelPermalink }}" itemprop="keywords">{{ $term }}</a></li>{{ end }}
+                {{- end }}
+            </ul>
+        </nav>
+        {{ end }}
+
     </footer>
 </article>
 <div class="article-crosslinks">
