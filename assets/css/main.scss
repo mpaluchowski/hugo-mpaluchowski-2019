@@ -8,27 +8,33 @@ body {
 }
 
 .page-header {
-    background: $color__header-background;
-    color: $color__header-foreground;
-    display: flex;
     align-items: center;
+    background: $color__header-background;
+    box-shadow: 0 0 .6em #ccc;
+    box-sizing: border-box;
+    display: flex;
+    height: $size__header-height;
+    justify-content: center;
     padding: 0 1em;
     position: fixed;
     top: 0;
     width: 100vw;
-    height: $size__header-height;
-    box-shadow: 0 0 .6em #666;
     z-index: 100;
 
     &__title {
+        color: #fff;
         font: {
-            size: 1.8em;
+            size: 1.4em;
             weight: 400;
         }
         margin: 0;
+        max-width: $width__content;
+        width: 100%;
 
         a {
+            background: #135e13;
             color: inherit;
+            padding: .2em .4em;
             text-decoration: none;
         }
     }
@@ -37,11 +43,16 @@ body {
 .page-footer {
     background: $color__footer-background;
     color: $color__footer-foreground;
+    display: flex;
+    font-size: .8em;
+    justify-content: center;
     padding: 2em 1em 3em;
 
     &__copyright {
-        margin: 0;
         line-height: 1.21;
+        margin: 0;
+        max-width: $width__content;
+        width: 100%;
 
         a {
             color: inherit;
@@ -52,8 +63,9 @@ body {
 }
 
 .article {
-    max-width: 700px;
+    max-width: $width__text;
     margin: 0 auto 8em;
+    width: 100%;
 
     &__header {
         line-height: 1.2;
@@ -66,7 +78,7 @@ body {
     }
 
     &__category {
-        background: lighten($color__header-background, 20%);
+        background: lighten(#135e13, 20%);
         color: #fff;
         display: inline-block;
         padding: .2em .5em;
@@ -170,7 +182,7 @@ body {
 
     ul > li {
         &::before {
-            background: $color__header-background;
+            background: #135e13;
             border-radius: 50%;
             content: "";
             display: block;
@@ -183,7 +195,7 @@ body {
 
         & > ul li {
             &::before {
-                background: lighten($color__header-background, 20%);
+                background: lighten(#135e13, 20%);
             }
         }
     }
@@ -199,7 +211,7 @@ body {
     }
 
     blockquote {
-        border-left: 4px solid lighten($color__header-background, 20%);
+        border-left: 4px solid lighten(#135e13, 20%);
         padding: .4em 0 .4em 1em;
         margin: 1em 0 1em 1em;
 

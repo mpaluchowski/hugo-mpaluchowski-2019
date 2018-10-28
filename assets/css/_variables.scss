@@ -1,6 +1,5 @@
 
-$color__header-background: #135e13;
-$color__header-foreground: #fff;
+$color__header-background: #fff;
 $color__footer-background: #135e13;
 $color__footer-foreground: #fff;
 $color__text: #585858;
@@ -17,6 +16,9 @@ $size__header-height: 3em;
 
 $font-family__body: "Noto+Sans", Helvetica, Arial, sans-serif;
 $font-family__header: "Lato", Helvetica, Arial, sans-serif;
+
+$width__content: 1000px;
+$width__text: 700px;
 
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans:400&subset=latin-ext');
 @import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i&subset=latin-ext');
