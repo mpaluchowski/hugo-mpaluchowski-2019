@@ -1,3 +1,19 @@
 <footer class="page-footer">
+    <div class="page-footer__contact">
+        {{ with .Site.Params.Logo }}
+        <img class="page-footer__contact-photo" src="{{ .path }}" alt="{{ .alt }}">
+        {{ end }}
+        {{ with .Site.Params.Social }}
+        <div class="page-footer__contact-content">
+            <div class="page-footer__contact-heading">Find me on</div>
+            <nav class="page-footer__contact-links">
+                {{ range . -}}
+                <a href="{{ .url }}" class="page-footer__contact-link">{{ .name }}</a>
+                {{- end }}
+            </nav>
+        </div>
+        {{ end }}
+    </div>
+
     <p class="page-footer__copyright">{{ .Site.Copyright | markdownify }}</p>
 </footer>
