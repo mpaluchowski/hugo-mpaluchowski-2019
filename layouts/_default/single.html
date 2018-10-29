@@ -9,7 +9,7 @@
         <h1 class="article__title">{{ .Title }}</h1>
         <div class="article__meta">
             <time>{{ .Date.Format "January 2, 2006" }}</time>,
-            {{ .ReadingTime }} minutes to read
+            {{ .ReadingTime }} minute{{ if gt .ReadingTime 1 }}s{{ end }} to read
         </div>
     </header>
     <main class="article__content text">
@@ -44,7 +44,7 @@
             <div class="article-crosslinks__title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
             <div class="article-crosslinks__meta">
                 <time>{{ .Date.Format "January 2, 2006" }}</time>,
-                {{ .ReadingTime }} minutes to read
+                {{ .ReadingTime }} minute{{ if gt .ReadingTime 1 }}s{{ end }} to read
             </div>
             <div class="article-crosslinks__summary text">{{ .Summary }}</div>
         </article>
