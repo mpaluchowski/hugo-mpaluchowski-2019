@@ -3,12 +3,12 @@
         {{ with .Site.Params.Logo }}
         <img class="page-footer__contact-photo" src="{{ .path }}" alt="{{ .alt }}">
         {{ end }}
-        {{ with .Site.Params.Social }}
+        {{ with .Site.Menus.social }}
         <div class="page-footer__contact-content">
             <div class="page-footer__contact-heading">Find me on</div>
             <nav class="page-footer__contact-links">
                 {{ range . -}}
-                <a href="{{ .url }}" class="page-footer__contact-link">{{ .name }}</a>
+                <a href="{{ .URL }}" class="page-footer__contact-link">{{ .Name }}</a>
                 {{- end }}
             </nav>
         </div>
