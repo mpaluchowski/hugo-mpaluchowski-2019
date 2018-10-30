@@ -3,10 +3,12 @@
 
 body {
     font: 400 16px $font-family__body;
+    box-sizing: border-box;
     color: $color__text;
     padding-top: $size__header-height;
 }
 
+@import "page";
 @import "page-header";
 @import "page-footer";
 @import "article";

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.Language.Lang }}">
     {{ partial "head.html" . }}
-    <body itemscope itemtype="http://schema.org/WebPage">
+    <body class="page" itemscope itemtype="http://schema.org/WebPage">
         {{ partial "header.html" . }}
-        <main itemprop="mainEntity" itemscope itemtype="http://lschema.org/Blog">
+        <main class="page__main" itemprop="mainEntity" itemscope itemtype="http://lschema.org/Blog">
         {{ block "main" . }}{{ end }}
         </main>
         {{ partial "footer.html" . }}
