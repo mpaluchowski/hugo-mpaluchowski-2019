@@ -2,31 +2,19 @@
 
 .feature {
     background: $color__text-background--highlight;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
     padding: 1.4em 0;
-
-    &__categories {
-        margin-bottom: .6em;
-    }
-
-    &__category {
-        background: lighten(#135e13, 20%);
-        color: #fff;
-        display: inline-block;
-        font-size: .9em;
-        padding: .3em .6em;
-
-        & + & {
-            margin-left: .4em;
-        }
-    }
 
     &__heading {
         box-sizing: border-box;
         font-size: inherit;
         line-height: 1.4;
         padding: 0 1em;
-        margin: 1em auto 0;
+        margin: 1em 0 0;
         max-width: $width__content;
+        width: 100%;
 
         &-title {
             color: $color__heading;
@@ -47,14 +35,31 @@
     &__articles {
         display: grid;
         grid-gap: 1em;
-        margin: 1em auto 0;
+        margin-top: 1em;
         max-width: $width__content;
+        width: 100%;
     }
 
     &__article {
         background: #fff;
         padding: 1em 1em 0;
         outline: 1px solid $color__ui--light;
+    }
+
+    &__categories {
+        margin-bottom: .6em;
+    }
+
+    &__category {
+        background: lighten(#135e13, 20%);
+        color: #fff;
+        display: inline-block;
+        font-size: .9em;
+        padding: .3em .6em;
+
+        & + & {
+            margin-left: .4em;
+        }
     }
 
     &__title {
