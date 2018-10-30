@@ -2,23 +2,52 @@
 
 .feature {
     background: $color__text-background--highlight;
-    padding: 1.4em 1em;
+    padding: 1.4em 0;
+
+    &__categories {
+        margin-bottom: .6em;
+    }
+
+    &__category {
+        background: lighten(#135e13, 20%);
+        color: #fff;
+        display: inline-block;
+        font-size: .9em;
+        padding: .3em .6em;
+
+        & + & {
+            margin-left: .4em;
+        }
+    }
 
     &__heading {
-        color: $color__heading;
-        font: {
-            size: 1rem;
-            weight: 700;
-        }
-        margin: 0 auto;
+        box-sizing: border-box;
+        font-size: inherit;
+        line-height: 1.4;
+        padding: 0 1em;
+        margin: 1em auto 0;
         max-width: $width__content;
-        text-transform: uppercase;
+
+        &-title {
+            color: $color__heading;
+            font-size: 1.2em;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        &-description {
+            font-weight: 400;
+
+            &:after {
+                content: ":";
+            }
+        }
     }
 
     &__articles {
         display: grid;
         grid-gap: 1em;
-        margin: 0 auto;
+        margin: 1em auto 0;
         max-width: $width__content;
     }
 
@@ -31,7 +60,9 @@
     &__title {
         font-family: $font-family__header;
         line-height: 1.4;
-        font-size: 1.2em;
+        font-size: 1.6em;
+        font-weight: 400;
+        margin: 0;
         text-transform: uppercase;
 
         a {

@@ -1,15 +1,73 @@
 {{ define "main" }}
 <section class="feature">
-    <!--<h2 class="feature__heading">Fresh thinking</h2>-->
+    <h2 class="feature__heading">
+        <span class="feature__heading-title">Fresh thinking</span>
+        <span class="feature__heading-description">from the latest posts</span>
+    </h2>
     <nav class="feature__articles">
         {{ range first 4 (where .Pages "Type" "posts") }}
         <article class="feature__article">
-            <div class="article-crosslinks__title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
-            <div class="article-crosslinks__meta">
+            {{ with .Params.categories }}
+            <div class="feature__categories">
+                {{ range . }}<div class="feature__category">{{ . }}</div>{{ end }}
+            </div>
+            {{ end }}
+            <h3 class="feature__title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+            <div class="feature__meta">
                 <time>{{ .Date.Format "January 2, 2006" }}</time>,
                 {{ .ReadingTime }} minute{{ if gt .ReadingTime 1 }}s{{ end }} to read
             </div>
-            <div class="article-crosslinks__summary text">{{ .Summary }}</div>
+            <div class="feature__summary text">{{ .Summary }}</div>
+        </article>
+        {{ end }}
+    </nav>
+</section>
+
+<section class="feature">
+    <h2 class="feature__heading">
+        <span class="feature__heading-title">Favorite thoughts</span>
+        <span class="feature__heading-description">from some of the posts I'm most happy with</span>
+    </h2>
+    <nav class="feature__articles">
+        {{ range first 4 .Site.Menus.readingList -}}
+        {{ with .Page }}
+        <article class="feature__article">
+            {{ with .Params.categories }}
+            <div class="feature__categories">
+                {{ range . }}<div class="feature__category">{{ . }}</div>{{ end }}
+            </div>
+            {{ end }}
+            <h3 class="feature__title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+            <div class="feature__meta">
+                <time>{{ .Date.Format "January 2, 2006" }}</time>,
+                {{ .ReadingTime }} minute{{ if gt .ReadingTime 1 }}s{{ end }} to read
+            </div>
+            <div class="feature__summary text">{{ .Summary }}</div>
+        </article>
+        {{ end }}
+        {{- end }}
+    </nav>
+</section>
+
+<section class="feature">
+    <h2 class="feature__heading">
+        <span class="feature__heading-title">Thought raffle</span>
+        <span class="feature__heading-description">from a random selection of posts</span>
+    </h2>
+    <nav class="feature__articles">
+        {{ range first 4 (shuffle (where .Pages "Type" "posts")) }}
+        <article class="feature__article">
+            {{ with .Params.categories }}
+            <div class="feature__categories">
+                {{ range . }}<div class="feature__category">{{ . }}</div>{{ end }}
+            </div>
+            {{ end }}
+            <h3 class="feature__title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+            <div class="feature__meta">
+                <time>{{ .Date.Format "January 2, 2006" }}</time>,
+                {{ .ReadingTime }} minute{{ if gt .ReadingTime 1 }}s{{ end }} to read
+            </div>
+            <div class="feature__summary text">{{ .Summary }}</div>
         </article>
         {{ end }}
     </nav>
