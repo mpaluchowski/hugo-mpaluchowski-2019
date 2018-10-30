@@ -1,0 +1,17 @@
+{{ define "main" }}
+<section class="feature">
+    <!--<h2 class="feature__heading">Fresh thinking</h2>-->
+    <nav class="feature__articles">
+        {{ range first 4 (where .Pages "Type" "posts") }}
+        <article class="feature__article">
+            <div class="article-crosslinks__title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
+            <div class="article-crosslinks__meta">
+                <time>{{ .Date.Format "January 2, 2006" }}</time>,
+                {{ .ReadingTime }} minute{{ if gt .ReadingTime 1 }}s{{ end }} to read
+            </div>
+            <div class="article-crosslinks__summary text">{{ .Summary }}</div>
+        </article>
+        {{ end }}
+    </nav>
+</section>
+{{ end }}

@@ -41,7 +41,7 @@
         {{ range $randomPosts }}
         <article class="article-crosslinks__article">
 
-            <div class="article-crosslinks__title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
+                <div class="article-crosslinks__title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
             <div class="article-crosslinks__meta">
                 <time>{{ .Date.Format "January 2, 2006" }}</time>,
                 {{ .ReadingTime }} minute{{ if gt .ReadingTime 1 }}s{{ end }} to read
