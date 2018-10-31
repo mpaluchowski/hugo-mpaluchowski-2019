@@ -23,14 +23,15 @@
     </nav>
 </section>
 
+{{- $favorites := first 4 (shuffle (where $.Site.Pages "Params.favorites" true)) -}}
+{{ if $favorites }}
 <section class="feature">
     <h2 class="feature__heading">
         <span class="feature__heading-title">Favorite thoughts</span>
         <span class="feature__heading-description">from some of the posts I'm most happy with</span>
     </h2>
     <nav class="feature__articles">
-        {{ range first 4 .Site.Menus.readingList -}}
-        {{ with .Page }}
+        {{ range $favorites -}}
         <article class="feature__article">
             {{ with .Params.categories }}
             <div class="feature__categories">
@@ -44,10 +45,10 @@
             </div>
             <div class="feature__summary text">{{ .Summary }}</div>
         </article>
-        {{ end }}
         {{- end }}
     </nav>
 </section>
+{{ end }}
 
 <section class="feature">
     <h2 class="feature__heading">
