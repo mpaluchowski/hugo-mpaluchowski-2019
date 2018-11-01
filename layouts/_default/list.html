@@ -1,7 +1,20 @@
 {{ define "main" }}
-{{ range .Pages }}
-<ul>
-    <li><a href="{{ .RelPermalink }}">{{ .Title }}</a> {{ .WordCount }}</li>
-</ul>
-{{ end }}
+<section class="list">
+    <h2 class="feature__heading">
+        <span class="feature__heading-title">{{ .Title }}</span>
+        <span class="feature__heading-description">related posts</span>
+    </h2>
+    <nav class="list__articles">
+        {{ range .Paginator.Pages -}}
+        <article class="list__article">
+            <h3 class="list__title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+            <div class="list__meta">
+                <time>{{ .Date.Format "January 2, 2006" }}</time>,
+                {{ .ReadingTime }} minute{{ if gt .ReadingTime 1 }}s{{ end }} to read
+            </div>
+            <div class="list__summary text">{{ .Summary }}</div>
+        </article>
+        {{- end }}
+    </nav>
+</section>
 {{ end }}
