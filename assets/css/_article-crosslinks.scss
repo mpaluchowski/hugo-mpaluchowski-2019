@@ -18,6 +18,10 @@
         grid-gap: 1em;
         margin: 1em auto 0;
         max-width: $width__content;
+
+        @media (min-width: $breakpoint__screen--medium) {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
     }
 
     &__article {

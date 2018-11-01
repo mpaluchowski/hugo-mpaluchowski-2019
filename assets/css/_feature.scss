@@ -38,6 +38,10 @@
         margin-top: 1em;
         max-width: $width__content;
         width: 100%;
+
+        @media (min-width: $breakpoint__screen--small) {
+            grid-template-columns: 1fr 1fr;
+        }
     }
 
     &__article {

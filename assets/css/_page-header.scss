@@ -41,5 +41,9 @@
     &__subtitle {
         font-size: 1.2em;
         margin-left: .6em;
+
+        @media(max-width: $breakpoint__screen--small) {
+            display: none;
+        }
     }
 }
