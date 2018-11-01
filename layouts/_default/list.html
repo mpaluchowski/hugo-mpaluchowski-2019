@@ -16,5 +16,14 @@
         </article>
         {{- end }}
     </nav>
+    {{ if gt .Paginator.TotalPages 1 -}}
+    <nav class="list__pager pager">
+        {{- $currentPage := .Paginator.PageNumber -}}
+        {{ range .Paginator.Pagers -}}
+        <a class="pager__page{{ if eq .PageNumber $currentPage }} pager__page--current{{ end }}" href="{{ .URL }}">{{ .PageNumber }}</a>
+        {{- end }}
+        <p class="pager__description">pages with {{ .Paginator.TotalNumberOfElements }} posts</p>
+    </nav>
+    {{- end }}
 </section>
 {{ end }}

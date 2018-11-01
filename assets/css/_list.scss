@@ -69,4 +69,12 @@
         color: #135e13;
         margin-top: .8em;
     }
+
+    &__pager {
+        box-sizing: border-box;
+        margin: 2em 0 2em;
+        max-width: $width__content;
+        padding: 0 1em;
+        width: 100%;
+    }
 }

@@ -1,0 +1,41 @@
+@import "variables";
+
+.pager {
+    align-items: center;
+    display: flex;
+    flex-flow: row wrap;
+
+    &__page {
+        $color__background: lighten(#135e13, 20%);
+        background: linear-gradient(
+                to bottom,
+                $color__background 0%,
+                $color__background 100%
+        ) repeat-x 0 100%;
+        background-size: 3px 100%;
+        color: #fff;
+        display: inline-block;
+        font-size: 1.2em;
+        font-weight: 700;
+        padding: .5em .8em;
+        text-decoration: none;
+        transition: background-size .3s, color .3s;
+        margin-right: .8em;
+
+        &:hover {
+            background-size: 3px 3px;
+            color: #000;
+        }
+
+        &--current {
+            background: #fff;
+            color: #000;
+            outline: 1px solid $color__ui--light;
+        }
+    }
+
+    &__description {
+        display: inline-block;
+        margin: 0;
+    }
+}
