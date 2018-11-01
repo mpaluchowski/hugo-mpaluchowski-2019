@@ -5,7 +5,6 @@ body {
     font: 400 16px $font-family__body;
     box-sizing: border-box;
     color: $color__text;
-    padding-top: $size__header-height;
 }
 
 @import "page";
@@ -18,3 +17,4 @@ body {
 @import "text";
 @import "article-crosslinks";
 @import "pager";
+@import "four-o-four";

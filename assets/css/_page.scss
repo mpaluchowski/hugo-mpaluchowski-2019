@@ -1,3 +1,5 @@
+@import "variables";
+
 .page {
     display: flex;
     flex-flow: column;
@@ -7,6 +9,7 @@
         display: flex;
         flex-flow: column;
         flex: 1 1 auto;
+        margin-top: $size__header-height;
 
         > * {
             flex: 1 1 auto;

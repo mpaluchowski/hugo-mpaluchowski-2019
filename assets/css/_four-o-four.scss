@@ -1,0 +1,48 @@
+@import "variables";
+
+.four-o-four {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 1em;
+
+    &__content {
+        max-width: $width__text;
+    }
+
+    &__heading {
+        background: #135e13;
+        color: #fff;
+        display: inline-block;
+        font-size: 6em;
+        font-weight: 400;
+        margin: 0;
+        padding: .05em .2em;
+    }
+
+    &__explanation {
+        margin-top: 3em;
+    }
+
+    &__exit {
+        $color__background: lighten(#135e13, 20%);
+        background: linear-gradient(
+                to bottom,
+                $color__background 0%,
+                $color__background 100%
+        ) repeat-x 0 100%;
+        background-size: 3px 100%;
+        color: #fff;
+        display: inline-block;
+        padding: .2em .5em;
+        text-decoration: none;
+        transition: background-size $time__transition-link-hover,
+        color $time__transition-link-hover;
+
+        &:hover {
+            background-size: 3px 3px;
+            color: #000;
+        }
+    }
+}
