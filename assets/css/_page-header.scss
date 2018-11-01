@@ -42,7 +42,7 @@
         font-size: 1.2em;
         margin-left: .6em;
 
-        @media(max-width: $breakpoint__screen--small) {
+        @media(max-width: $breakpoint__screen--small - 1) {
             display: none;
         }
     }
