@@ -56,11 +56,13 @@
 
         &:not(&--plain) > p:first-of-type {
             background: $color__text-background--highlight;
-            outline: 1px solid $color__ui--light;
-            font-size: 1.2em;
-            margin: {
-                bottom: 1.8em;
+            border: {
+                width: 1px 0;
+                style: solid;
+                color: $color__ui--light;
             }
+            font-size: 1.2em;
+            margin-bottom: 1.8em;
             padding: 1em;
         }
 
