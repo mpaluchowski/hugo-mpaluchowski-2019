@@ -14,13 +14,26 @@
     }
 
     &__category {
-        background: lighten(#135e13, 20%);
+        $color__background: lighten(#135e13, 20%);
+        background: linear-gradient(
+                to bottom,
+                $color__background 0%,
+                $color__background 100%
+        ) repeat-x 0 100%;
+        background-size: 3px 100%;
         color: #fff;
         display: inline-block;
         padding: .2em .5em;
+        text-decoration: none;
+        transition: background-size .3s, color .3s;
 
         & + & {
             margin-left: .4em;
+        }
+
+        &:hover {
+            background-size: 3px 3px;
+            color: #000;
         }
     }
 

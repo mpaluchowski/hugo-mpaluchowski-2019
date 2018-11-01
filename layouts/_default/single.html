@@ -3,7 +3,9 @@
     <header class="article__header">
         {{ with .Params.categories }}
         <div class="article__categories">
-            {{ range . }}<div class="article__category">{{ . }}</div>{{ end }}
+            {{ range $category := . -}}
+            {{ with $.Site.GetPage (printf "/categories/%s" $category | urlize) }}<a class="article__category" href="{{ .RelPermalink }}">{{ $category }}</a>{{ end }}
+            {{- end }}
         </div>
         {{ end }}
         <h1 class="article__title">{{ .Title }}</h1>
