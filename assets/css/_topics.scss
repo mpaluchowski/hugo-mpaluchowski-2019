@@ -12,14 +12,28 @@
     }
 
     &__topic {
-        background: lighten(#135e13, 20%);
         display: inline-block;
         margin: 0 .4em .4em 0;
-        padding: .2em .5em;
 
         a {
+            $color__background: lighten(#135e13, 20%);
+            background: linear-gradient(
+                    to bottom,
+                    $color__background 0%,
+                    $color__background 100%
+            ) repeat-x 0 100%;
+            background-size: 3px 100%;
             color: #fff;
+            display: block;
+            padding: .2em .5em;
             text-decoration: none;
+            transition: background-size $time__transition-link-hover,
+                color $time__transition-link-hover;
+
+            &:hover {
+                background-size: 3px 3px;
+                color: #000;
+            }
         }
     }
 }

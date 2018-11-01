@@ -102,6 +102,8 @@
         border-bottom: 1px solid $color__link-underline;
         color: $color__link;
         text-decoration: none;
+        transition: border-width $time__transition-link-hover,
+            color $time__transition-link-hover;
 
         &:hover {
             border-width: 2px;
