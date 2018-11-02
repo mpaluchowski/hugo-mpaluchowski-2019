@@ -1,6 +1,10 @@
 <header class="page__header page-header">
     <div class="page-header__content">
+        {{ if .IsHome -}}
         <h1 class="page-header__title"><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1>
+        {{ else }}
+        <div class="page-header__title"><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></div>
+        {{- end -}}
         {{ with .Site.Params.Subtitle -}}<div class="page-header__subtitle">{{ . }}</div>{{ end }}
     </div>
 </header>
