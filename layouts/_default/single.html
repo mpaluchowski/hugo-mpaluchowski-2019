@@ -14,7 +14,7 @@
             {{ .ReadingTime }} minute{{ if gt .ReadingTime 1 }}s{{ end }} to read
         </div>
     </header>
-    <main class="article__content text">
+    <main class="article__content{{ if .Params.short}} article__content--plain{{ end }} text">
         {{ .Content }}
     </main>
     <footer class="article__footer">
