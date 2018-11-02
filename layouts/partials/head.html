@@ -34,7 +34,7 @@
     {{ if (fileExists "static/favicon.png") }}<link rel="shortcut icon" type="image/png" href="{{ "favicon.png" | absURL }}">{{ end }}
 
     {{ if .Site.GoogleAnalytics }}
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-2971180-9"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.GoogleAnalytics }}"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
