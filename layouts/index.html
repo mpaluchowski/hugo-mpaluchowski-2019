@@ -60,7 +60,7 @@
         <span class="feature__heading-description">from a random selection of posts</span>
     </h2>
     <nav class="feature__articles">
-        {{ range first 4 (shuffle (where .Pages "Type" "posts")) }}
+        {{ range first 4 (shuffle (after 4 (where .Pages "Type" "posts"))) }}
         <article class="feature__article">
             {{ with .Params.categories }}
             <div class="feature__categories">
