@@ -37,7 +37,7 @@
     </footer>
 </article>
 <div class="article-crosslinks">
-    {{- $randomPosts := shuffle (where (where .Site.Pages "Type" "posts") "Kind" "page") | first 3 -}}
+    {{- $randomPosts := shuffle (where (where (where .Site.Pages "Type" "posts") "Kind" "page") "Filename" "ne" .Filename) | first 3 -}}
     <div class="article-crosslinks__heading">Read another post?</div>
     <nav class="article-crosslinks__articles">
         {{ range $randomPosts }}
