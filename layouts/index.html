@@ -5,7 +5,8 @@
         <span class="feature__heading-description">from the latest posts</span>
     </h2>
     <nav class="feature__articles">
-        {{ range first 4 (where .Pages "Type" "posts") }}
+        {{ $latest := first 4 (where .Pages "Type" "posts") }}
+        {{ range $latest }}
         <article class="feature__article">
             {{ with .Params.categories }}
             <div class="feature__categories">
@@ -25,7 +26,9 @@
     </nav>
 </section>
 
-{{- $favorites := first 4 (shuffle (where $.Site.Pages "Params.favorites" true)) -}}
+{{- $exclude := slice -}}
+{{- range $latest }}{{ $exclude = append .Filename $exclude }}{{ end -}}
+{{- $favorites := first 4 (shuffle (where (where $.Site.Pages "Params.favorites" true) "Filename" "not in" $exclude)) -}}
 {{ if $favorites }}
 <section class="feature">
     <h2 class="feature__heading">
@@ -54,13 +57,14 @@
 </section>
 {{ end }}
 
+{{- range $favorites }}{{ $exclude = append .Filename $exclude }}{{ end -}}
 <section class="feature">
     <h2 class="feature__heading">
         <span class="feature__heading-title">Thought raffle</span>
         <span class="feature__heading-description">from a random selection of posts</span>
     </h2>
     <nav class="feature__articles">
-        {{ range first 4 (shuffle (after 4 (where .Pages "Type" "posts"))) }}
+        {{ range first 4 (shuffle (where (where .Pages "Type" "posts") "Filename" "not in" $exclude)) }}
         <article class="feature__article">
             {{ with .Params.categories }}
             <div class="feature__categories">
