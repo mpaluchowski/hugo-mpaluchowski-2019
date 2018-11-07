@@ -26,9 +26,7 @@
     </nav>
 </section>
 
-{{- $exclude := slice -}}
-{{- range $latest }}{{ $exclude = append .Filename $exclude }}{{ end -}}
-{{- $favorites := first 4 (shuffle (where (where $.Site.Pages "Params.favorites" true) "Filename" "not in" $exclude)) -}}
+{{- $favorites := first 4 (shuffle ((where  $.Site.Pages "Params.favorites" true) | complement $latest)) -}}
 {{ if $favorites }}
 <section class="feature">
     <h2 class="feature__heading">
@@ -57,14 +55,13 @@
 </section>
 {{ end }}
 
-{{- range $favorites }}{{ $exclude = append .Filename $exclude }}{{ end -}}
 <section class="feature">
     <h2 class="feature__heading">
         <span class="feature__heading-title">Thought raffle</span>
         <span class="feature__heading-description">from a random selection of posts</span>
     </h2>
     <nav class="feature__articles">
-        {{ range first 4 (shuffle (where (where .Pages "Type" "posts") "Filename" "not in" $exclude)) }}
+        {{ range first 4 (shuffle ((where .Pages "Type" "posts") | complement $latest $favorites)) }}
         <article class="feature__article">
             {{ with .Params.categories }}
             <div class="feature__categories">
