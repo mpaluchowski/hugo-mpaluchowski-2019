@@ -6,6 +6,10 @@
 
     p, li {
         line-height: 1.421;
+
+        @media (min-width: $breakpoint__screen--medium) {
+            line-height: 1.521;
+        }
     }
 
     ul, ol {
