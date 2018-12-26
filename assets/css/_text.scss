@@ -37,11 +37,12 @@
             background: #135e13;
             border-radius: 50%;
             content: "";
-            display: block;
+            display: inline-block;
             height: .7em;
-            margin: 1.421 * .2em 0 0 -1.4em;
-            position: absolute;
-            vertical-align: middle;
+            margin: {
+                left: -1.4em;
+                right: .7em;
+            }
             width: .7em;
         }
 
