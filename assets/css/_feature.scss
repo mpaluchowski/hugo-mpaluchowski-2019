@@ -41,6 +41,7 @@
 
         @media (min-width: $breakpoint__screen--small) {
             grid-template-columns: 1fr 1fr;
+            grid-auto-rows: 1fr
         }
     }
 
