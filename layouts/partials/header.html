@@ -1,10 +1,22 @@
 <header class="page__header page-header">
     <div class="page-header__content">
-        {{ if .IsHome -}}
-        <h1 class="page-header__title" itemprop="headline"><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1>
-        {{ else }}
-        <div class="page-header__title" itemprop="headline"><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></div>
-        {{- end -}}
-        {{ with .Site.Params.Subtitle -}}<div class="page-header__subtitle" itemprop="description">{{ . }}</div>{{ end }}
+        <div class="page-header__content-section">
+            {{ if .IsHome -}}
+            <h1 class="page-header__title" itemprop="headline"><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1>
+            {{ else }}
+            <div class="page-header__title" itemprop="headline"><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></div>
+            {{- end -}}
+            {{ with .Site.Params.Subtitle -}}<div class="page-header__subtitle" itemprop="description">{{ . }}</div>{{ end }}
+        </div>
+
+        <div class="page-header__content-section">
+            {{ with .Site.Menus.pages -}}
+            <nav class="page-header__menu">
+                {{ range . -}}
+                <a href="{{ .URL }}" class="page-header__menu-link">{{ .Name }}</a>
+                {{- end }}
+            </nav>
+            {{- end }}
+        </div>
     </div>
 </header>
