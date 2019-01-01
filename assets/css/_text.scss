@@ -38,12 +38,13 @@
             border-radius: 50%;
             content: "";
             display: inline-block;
-            height: .7em;
+            height: .5em;
             margin: {
-                left: -1.4em;
+                bottom: .1em;
+                left: -1.2em;
                 right: .7em;
             }
-            width: .7em;
+            width: .5em;
         }
 
         & > ul li {
