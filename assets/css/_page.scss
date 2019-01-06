@@ -6,11 +6,14 @@
     flex-flow: column;
     min-height: 100vh;
 
+    &__header, &__footer {
+        flex: none;
+    }
+
     &__main {
         display: flex;
         flex-flow: column;
         flex: 1 1 auto;
-        margin-top: $size__header-height;
 
         > * {
             flex: 1 1 auto;
