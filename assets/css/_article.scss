@@ -56,7 +56,7 @@
             right: 1em;
         }
 
-        &:not(&--plain) > p:first-of-type {
+        &:not(&--plain) > p:first-child {
             background: $color__text-background--highlight;
             border: {
                 width: 1px 0;
@@ -74,7 +74,7 @@
         }
 
         @media(max-width: $breakpoint__screen--medium - 1) {
-            &:not(&--plain) > p:first-of-type, > figure {
+            &:not(&--plain) > p:first-child, > figure {
                 box-sizing: border-box;
                 left: 50%;
                 margin: {
