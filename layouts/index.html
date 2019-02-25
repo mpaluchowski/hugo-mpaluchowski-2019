@@ -55,6 +55,7 @@
 </section>
 {{ end }}
 
+{{ if gt (len (where .Pages "Type" "posts")) 4 }}
 <section class="feature">
     <h2 class="feature__heading">
         <span class="feature__heading-title">Thought raffle</span>
@@ -80,4 +81,6 @@
         {{ end }}
     </nav>
 </section>
+{{ end }}
+
 {{ end }}
