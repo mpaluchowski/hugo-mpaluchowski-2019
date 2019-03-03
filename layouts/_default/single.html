@@ -14,9 +14,9 @@
             {{ .ReadingTime }} minute{{ if gt .ReadingTime 1 }}s{{ end }} to read
         </div>
     </header>
-    <main class="article__content{{ if .Params.short}} article__content--plain{{ end }} text" itemprop="articleBody">
+    <div class="article__content{{ if .Params.short}} article__content--plain{{ end }} text" itemprop="articleBody">
         {{ .Content }}
-    </main>
+    </div>
     <footer class="article__footer">
         {{ if isset .Site.Data.authors .Params.author }}
         <div class="article__author">By <span class="p-author" itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ (index .Site.Data.authors .Params.author).name }}</span></span></div>
