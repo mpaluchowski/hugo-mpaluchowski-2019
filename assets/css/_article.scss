@@ -50,6 +50,21 @@
         color: $color__text--deprioritized;
     }
 
+    &__warning {
+        border: 1px solid orange;
+        font-size: .8em;
+        line-height: 1.6;
+        margin: 2em .32em;
+        padding: .8em 1em;
+
+        &-label {
+            background: orange;
+            color: #fff;
+            margin-right: .6em;
+            padding: .1em .4em;
+        }
+    }
+
     &__content {
         margin: {
             left: 1em;

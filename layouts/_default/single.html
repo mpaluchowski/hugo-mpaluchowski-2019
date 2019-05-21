@@ -14,6 +14,7 @@
             {{ .ReadingTime }} minute{{ if gt .ReadingTime 1 }}s{{ end }} to read
         </div>
     </header>
+    {{ with .Params.warning }}<aside class="article__warning"><span class="article__warning-label">Caution</span>{{ . | markdownify }}</aside>{{ end }}
     <div class="article__content{{ if .Params.short}} article__content--plain{{ end }} text" itemprop="articleBody">
         {{ .Content }}
     </div>
