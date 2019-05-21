@@ -11,10 +11,10 @@ $ cd /your/hugo/site
 $ git clone https://github.com/mpaluchowski/hugo-mpaluchowski-2019 themes/mpaluchowski-2019
 ```
 
-Build the [SASS](http://sass-lang.com/) files from `/assets/css` into `/static/css`:
+Build the [SASS](http://sass-lang.com/) files from `/assets/css`:
 
 ```shell
-$ sass --no-source-map --style=compressed --update assets:static
+$ sass --no-source-map --style=compressed --update assets:assets
 ```
 
 Then tell Hugo to render your site with the theme:
