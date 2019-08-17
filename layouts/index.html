@@ -5,7 +5,7 @@
         <span class="feature__heading-description">from the latest posts</span>
     </h2>
     <nav class="feature__articles">
-        {{ $latest := first 4 (where .Pages "Type" "posts") }}
+        {{ $latest := first 4 (where $.Site.RegularPages "Type" "posts") }}
         {{ range $latest }}
         <article class="feature__article">
             {{ with .Params.categories }}
@@ -26,7 +26,7 @@
     </nav>
 </section>
 
-{{- $favorites := first 4 (shuffle ((where  $.Site.Pages "Params.favorites" true) | complement $latest)) -}}
+{{- $favorites := first 4 (shuffle ((where  $.Site.RegularPages "Params.favorites" true) | complement $latest)) -}}
 {{ if $favorites }}
 <section class="feature">
     <h2 class="feature__heading">
@@ -55,14 +55,14 @@
 </section>
 {{ end }}
 
-{{ if gt (len (where .Pages "Type" "posts")) 4 }}
+{{ if gt (len (where $.Site.RegularPages "Type" "posts")) 4 }}
 <section class="feature">
     <h2 class="feature__heading">
         <span class="feature__heading-title">Thought raffle</span>
         <span class="feature__heading-description">from a random selection of posts</span>
     </h2>
     <nav class="feature__articles">
-        {{ range first 4 (shuffle ((where .Pages "Type" "posts") | complement $latest $favorites)) }}
+        {{ range first 4 (shuffle ((where $.Site.RegularPages "Type" "posts") | complement $latest $favorites)) }}
         <article class="feature__article">
             {{ with .Params.categories }}
             <div class="feature__categories">
