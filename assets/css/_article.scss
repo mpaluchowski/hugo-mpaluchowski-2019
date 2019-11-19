@@ -44,6 +44,10 @@
         font: 400 2.4em $font-family__header;
         margin: .4em 0 1em;
         text-transform: uppercase;
+
+        @media(max-width: $breakpoint__screen--small - 1) {
+            font-size: 2em;
+        }
     }
 
     &__meta {
@@ -86,6 +90,10 @@
                 right: -1em;
             }
             padding: .8em 1em;
+
+            @media(max-width: $breakpoint__screen--small - 1) {
+                font-size: 1.1em;
+            }
         }
 
         @media(max-width: $breakpoint__screen--medium - 1) {
