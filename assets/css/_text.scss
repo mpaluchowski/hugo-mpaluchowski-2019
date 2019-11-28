@@ -68,12 +68,6 @@
         margin-top: .8em;
     }
 
-    pre {
-        background: $color__code-background;
-        padding: .2em .4em;
-        overflow-x: auto;
-    }
-
     blockquote {
         border-left: 4px solid lighten(#135e13, 20%);
         padding: .4em 0 .4em 1em;
@@ -127,6 +121,12 @@
             border-width: 2px;
             color: $color__link--hover;
         }
+    }
+
+    pre {
+        background: $color__code-background;
+        padding: .2em .4em;
+        overflow-x: auto;
     }
 
     code {
