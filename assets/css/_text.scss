@@ -14,6 +14,10 @@
         }
     }
 
+    li > p {
+        margin: 0;
+    }
+
     ul, ol {
         padding-left: 2em;
     }
@@ -39,11 +43,8 @@
             content: "";
             display: inline-block;
             height: .5em;
-            margin: {
-                bottom: .1em;
-                left: -1.2em;
-                right: .7em;
-            }
+            margin: .6em 0 0 -1.2em;
+            position: absolute;
             width: .5em;
         }
 
