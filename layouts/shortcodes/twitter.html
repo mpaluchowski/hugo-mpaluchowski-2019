@@ -1,5 +1,5 @@
 <div class="tweet">
     {{- $id := .Get 0 -}}
-    {{- $json := getJSON "https://api.twitter.com/1/statuses/oembed.json?id=" $id "&" -}}
+    {{- $json := getJSON "https://api.twitter.com/1/statuses/oembed.json?id=" $id -}}
     {{ $json.html | safeHTML }}
 </div>
