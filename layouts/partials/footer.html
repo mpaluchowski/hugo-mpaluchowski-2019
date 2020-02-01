@@ -23,5 +23,5 @@
         </div>
     </div>
 
-    <p class="page-footer__copyright">{{ .Site.Copyright | markdownify }} Built with <a href="https://gohugo.io/">Hugo</a>.</p>
+    <p class="page-footer__copyright">{{ .Site.Copyright | safeHTML | markdownify }} Built with <a href="https://gohugo.io/">Hugo</a>.</p>
 </footer>
