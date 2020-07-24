@@ -1,6 +1,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
-    {{- $excludedKinds := slice "section" "taxonomy" "taxonomyTerm" -}}
+    {{- $excludedKinds := slice "section" "taxonomy" "term" -}}
     {{ range (where .Site.Pages "Kind" "not in" $excludedKinds) }}
     <url>
         <loc>{{ .Permalink }}</loc>{{ if not .Lastmod.IsZero }}
