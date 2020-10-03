@@ -5,7 +5,7 @@ description = ""
 homepage = "https://michal.paluchowski.com/"
 tags = ["blog", "responsive", "minimal"]
 features = []
-min_version = "0.55"
+min_version = "0.73"
 
 [author]
   name = "Michał Paluchowski"
