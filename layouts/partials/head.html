@@ -35,15 +35,6 @@
     {{ if ne .Kind "404" }}{{ with .OutputFormats.Get "RSS" }}<link rel="alternate" type="application/rss+xml" href="{{ .Permalink }}">{{ end }}{{ end }}
     {{ if (fileExists "static/favicon.png") }}<link rel="shortcut icon" type="image/png" href="{{ "favicon.png" | absURL }}">{{ end }}
 
-    {{ if .Site.GoogleAnalytics }}
-    <script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.GoogleAnalytics }}"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', '{{ .Site.GoogleAnalytics }}');
-    </script>
-    {{ end }}
+    {{ template "_internal/google_analytics.html" . }}
     {{ partial "microsoft_clarity.html" . }}
 </head>
