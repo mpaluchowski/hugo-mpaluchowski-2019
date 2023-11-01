@@ -8,7 +8,7 @@
             <div class="page-footer__contact-heading">Find me on</div>
             <nav class="page-footer__contact-links">
                 {{ range . -}}
-                <a href="{{ .URL }}" class="page-footer__contact-link">{{ .Name }}</a>
+                <a rel="me" href="{{ .URL }}" class="page-footer__contact-link">{{ .Name }}</a>
                 {{- end }}
             </nav>
             {{- end }}
