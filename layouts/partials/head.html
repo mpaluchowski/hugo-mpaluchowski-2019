@@ -31,7 +31,7 @@
     {{- $style := resources.Get "css/main.css" | resources.Fingerprint -}}
     <link rel="stylesheet" href="{{ $style.Permalink }}" type="text/css" media="all">
 
-    {{ if ne .Kind "404" }}{{ with .OutputFormats.Get "RSS" }}<link rel="alternate" type="application/rss+xml" href="{{ .Permalink }}">{{ end }}{{ end }}
+    {{ if ne .Kind "404" }}{{ with .OutputFormats.Get "RSS" }}<link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink }}" title="{{ page.Title }}">{{ end }}{{ end }}
     {{ if (fileExists "static/favicon.png") }}<link rel="shortcut icon" type="image/png" href="{{ "favicon.png" | absURL }}">{{ end }}
 
     {{ template "_internal/google_analytics.html" . }}
