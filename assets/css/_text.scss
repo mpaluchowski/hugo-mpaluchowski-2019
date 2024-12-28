@@ -1,4 +1,5 @@
-@import "variables";
+@use "sass:color";
+@use "variables";
 
 .text {
     h2 {
@@ -9,7 +10,7 @@
     p, li {
         line-height: 1.421;
 
-        @media (min-width: $breakpoint__screen--medium) {
+        @media (min-width: variables.$breakpoint__screen--medium) {
             line-height: 1.521;
         }
     }
@@ -50,7 +51,7 @@
 
         & > ul li {
             &::before {
-                background: lighten(#135e13, 20%);
+                background: color.adjust(#135e13, $lightness: 20%);
             }
         }
     }
@@ -69,7 +70,7 @@
     }
 
     blockquote {
-        border-left: 4px solid lighten(#135e13, 20%);
+        border-left: 4px solid color.adjust(#135e13, $lightness: 20%);
         padding: .4em 0 .4em 1em;
         margin: 1em 0 1em 1em;
 
@@ -84,7 +85,7 @@
 
     hr {
         border: 0;
-        border-top: 2px solid lighten($color__link, 20%);
+        border-top: 2px solid color.adjust(variables.$color__link, $lightness: 20%);
         margin: 2em auto;
         width: 4em;
     }
@@ -111,26 +112,26 @@
     }
 
     a {
-        border-bottom: 1px solid $color__link-underline;
-        color: $color__link;
+        border-bottom: 1px solid variables.$color__link-underline;
+        color: variables.$color__link;
         text-decoration: none;
-        transition: border-width $time__transition-link-hover,
-            color $time__transition-link-hover;
+        transition: border-width variables.$time__transition-link-hover,
+            color variables.$time__transition-link-hover;
 
         &:hover {
             border-width: 2px;
-            color: $color__link--hover;
+            color: variables.$color__link--hover;
         }
     }
 
     pre {
-        background: $color__code-background;
+        background: variables.$color__code-background;
         padding: .2em .4em;
         overflow-x: auto;
     }
 
     code {
-        background: $color__code-background;
+        background: variables.$color__code-background;
         border-radius: .2em;
         padding: .1em .2em;
     }

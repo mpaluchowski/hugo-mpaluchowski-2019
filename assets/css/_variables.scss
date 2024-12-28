@@ -1,3 +1,4 @@
+@use "sass:color";
 
 $color__header-background: #fff;
 $color__footer-background: #135e13;
@@ -8,9 +9,9 @@ $color__text-background--highlight: #fafafa;
 $color__heading: #000;
 $color__link: $color__text;
 $color__link--hover: #135e13;
-$color__link-underline: darken($color__text-background--highlight, 20%);
-$color__ui--light: darken($color__text-background--highlight, 10%);
-$color__code-background: darken($color__text-background--highlight, 5%);
+$color__link-underline: color.adjust($color__text-background--highlight, $lightness: -20%);
+$color__ui--light: color.adjust($color__text-background--highlight, $lightness: -10%);
+$color__code-background: color.adjust($color__text-background--highlight, $lightness: -5%);
 
 $size__header-height: 4em;
 

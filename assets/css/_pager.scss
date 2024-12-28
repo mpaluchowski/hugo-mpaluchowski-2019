@@ -1,4 +1,5 @@
-@import "variables";
+@use "sass:color";
+@use "variables";
 
 .pager {
     align-items: center;
@@ -6,7 +7,7 @@
     flex-flow: row wrap;
 
     &__page {
-        $color__background: lighten(#135e13, 20%);
+        $color__background: color.adjust(#135e13, $lightness: 20%);
         background: linear-gradient(
                 to bottom,
                 $color__background 0%,
@@ -30,7 +31,7 @@
         &--current {
             background: #fff;
             color: #000;
-            outline: 1px solid $color__ui--light;
+            outline: 1px solid variables.$color__ui--light;
         }
     }
 

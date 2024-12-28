@@ -1,12 +1,12 @@
-@import "variables";
+@use "variables";
 
 .page-header {
     align-items: center;
-    background: $color__header-background;
+    background: variables.$color__header-background;
     box-shadow: 0 0 .6em #ccc;
     box-sizing: border-box;
     display: flex;
-    height: $size__header-height;
+    height: variables.$size__header-height;
     justify-content: center;
     left: 0;
     position: -webkit-sticky;
@@ -19,7 +19,7 @@
         box-sizing: border-box;
         display: grid;
         grid-template-columns: 1fr auto;
-        max-width: $width__content;
+        max-width: variables.$width__content;
         padding: 0 1em;
         width: 100%;
 
@@ -50,7 +50,7 @@
         font-size: 1.2em;
         margin-left: .6em;
 
-        @media(max-width: $breakpoint__screen--small - 1) {
+        @media(max-width: variables.$breakpoint__screen--small - 1) {
             display: none;
         }
     }
@@ -58,13 +58,13 @@
     &__menu {
         &-link {
             border-bottom: 2px solid transparent;
-            color: $color__heading;
+            color: variables.$color__heading;
             font-size: 1.2em;
             text-decoration: none;
-            transition: border-bottom-color $time__transition-link-hover;
+            transition: border-bottom-color variables.$time__transition-link-hover;
 
             &:hover {
-                border-bottom-color: $color__link-underline;
+                border-bottom-color: variables.$color__link-underline;
             }
         }
     }

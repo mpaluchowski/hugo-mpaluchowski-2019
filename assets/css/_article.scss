@@ -1,7 +1,8 @@
-@import "variables";
+@use "sass:color";
+@use "variables";
 
 .article {
-    max-width: $width__text;
+    max-width: variables.$width__text;
     margin: 0 auto 4em;
     width: 100%;
 
@@ -16,7 +17,7 @@
     }
 
     &__category {
-        $color__background: lighten(#135e13, 20%);
+        $color__background: color.adjust(#135e13, $lightness: 20%);
         background: linear-gradient(
                 to bottom,
                 $color__background 0%,
@@ -40,18 +41,18 @@
     }
 
     &__title {
-        color: $color__heading;
-        font: 400 2.4em $font-family__header;
+        color: variables.$color__heading;
+        font: 400 2.4em variables.$font-family__header;
         margin: .4em 0 1em;
         text-transform: uppercase;
 
-        @media(max-width: $breakpoint__screen--small - 1) {
+        @media(max-width: variables.$breakpoint__screen--small - 1) {
             font-size: 2em;
         }
     }
 
     &__meta {
-        color: $color__text--deprioritized;
+        color: variables.$color__text--deprioritized;
     }
 
     &__warning {
@@ -76,11 +77,11 @@
         }
 
         &:not(&--plain) > p:first-child {
-            background: $color__text-background--highlight;
+            background: variables.$color__text-background--highlight;
             border: {
                 width: 1px 0;
                 style: solid;
-                color: $color__ui--light;
+                color: variables.$color__ui--light;
             }
             font-size: 1.2em;
             line-height: 1.421;
@@ -91,12 +92,12 @@
             }
             padding: .8em 1em;
 
-            @media(max-width: $breakpoint__screen--small - 1) {
+            @media(max-width: variables.$breakpoint__screen--small - 1) {
                 font-size: 1.1em;
             }
         }
 
-        @media(max-width: $breakpoint__screen--medium - 1) {
+        @media(max-width: variables.$breakpoint__screen--medium - 1) {
             &:not(&--plain) > p:first-child, > figure {
                 box-sizing: border-box;
                 left: 50%;
@@ -127,7 +128,7 @@
 
     &__author {
         border-top: 2px solid #135e13;
-        color: $color__heading;
+        color: variables.$color__heading;
         padding: 1em 0 0;
         font-weight: 700;
         text-transform: uppercase;

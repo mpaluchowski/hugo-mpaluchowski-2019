@@ -1,20 +1,21 @@
-@import "variables";
-@import "normalize";
+@use "sass:meta";
+@use "variables";
+@use "normalize";
 
 body {
-    font: 400 16px $font-family__body;
+    font: 400 16px variables.$font-family__body;
     box-sizing: border-box;
-    color: $color__text;
+    color: variables.$color__text;
 }
 
-@import "page";
-@import "page-header";
-@import "page-footer";
-@import "feature";
-@import "list";
-@import "article";
-@import "topics";
-@import "text";
-@import "article-crosslinks";
-@import "pager";
-@import "four-o-four";
+@include meta.load-css("page");
+@include meta.load-css("page-header");
+@include meta.load-css("page-footer");
+@include meta.load-css("feature");
+@include meta.load-css("list");
+@include meta.load-css("article");
+@include meta.load-css("topics");
+@include meta.load-css("text");
+@include meta.load-css("article-crosslinks");
+@include meta.load-css("pager");
+@include meta.load-css("four-o-four");

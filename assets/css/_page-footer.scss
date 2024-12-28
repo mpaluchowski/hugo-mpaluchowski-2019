@@ -1,9 +1,9 @@
-@import "variables";
+@use "variables";
 
 .page-footer {
     align-items: center;
-    background: $color__footer-background;
-    color: $color__footer-foreground;
+    background: variables.$color__footer-background;
+    color: variables.$color__footer-foreground;
     display: flex;
     flex-direction: column;
     padding: 2em 1em 3em;
@@ -12,7 +12,7 @@
         display: flex;
         align-items: center;
         width: 100%;
-        max-width: $width__content;
+        max-width: variables.$width__content;
 
         &-photo {
             flex: 0 0 auto;
@@ -28,7 +28,7 @@
 
         &-heading {
             font-weight: 700;
-            font-family: $font-family__header;
+            font-family: variables.$font-family__header;
             text-transform: uppercase;
 
             &:nth-of-type(n + 2) {
@@ -55,13 +55,13 @@
         font-size: .9em;
         line-height: 1.3;
         margin: 2em 0 0;
-        max-width: $width__content;
+        max-width: variables.$width__content;
         width: 100%;
 
         a {
             color: inherit;
             text-decoration: none;
-            border-bottom: 1px solid $color__footer-foreground;
+            border-bottom: 1px solid variables.$color__footer-foreground;
         }
     }
 }

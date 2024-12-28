@@ -1,7 +1,7 @@
-@import "variables";
+@use "variables";
 
 .list {
-    background: $color__text-background--highlight;
+    background: variables.$color__text-background--highlight;
     display: flex;
     flex-flow: column;
     align-items: center;
@@ -13,11 +13,11 @@
         line-height: 1.4;
         padding: 0 1em;
         margin: 1em 0 0;
-        max-width: $width__content;
+        max-width: variables.$width__content;
         width: 100%;
 
         &-title {
-            color: $color__heading;
+            color: variables.$color__heading;
             font-size: 1.2em;
             font-weight: 700;
             text-transform: uppercase;
@@ -36,10 +36,10 @@
         display: grid;
         grid-gap: 1em;
         margin-top: 1em;
-        max-width: $width__content;
+        max-width: variables.$width__content;
         width: 100%;
 
-        @media (min-width: $breakpoint__screen--small) {
+        @media (min-width: variables.$breakpoint__screen--small) {
             grid-template-columns: 1fr 1fr;
             grid-auto-rows: 1fr
         }
@@ -48,11 +48,11 @@
     &__article {
         background: #fff;
         padding: 1em 1em 0;
-        outline: 1px solid $color__ui--light;
+        outline: 1px solid variables.$color__ui--light;
     }
 
     &__title {
-        font-family: $font-family__header;
+        font-family: variables.$font-family__header;
         line-height: 1.4;
         font-size: 1.6em;
         font-weight: 400;
@@ -61,12 +61,12 @@
 
         a {
             border-bottom: 2px solid transparent;
-            color: $color__heading;
+            color: variables.$color__heading;
             text-decoration: none;
-            transition: border-bottom-color $time__transition-link-hover;
+            transition: border-bottom-color variables.$time__transition-link-hover;
 
             &:hover {
-                border-bottom-color: $color__link-underline;
+                border-bottom-color: variables.$color__link-underline;
             }
         }
     }
@@ -79,7 +79,7 @@
     &__pager {
         box-sizing: border-box;
         margin: 2em 0 2em;
-        max-width: $width__content;
+        max-width: variables.$width__content;
         padding: 0 1em;
         width: 100%;
     }

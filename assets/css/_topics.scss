@@ -1,7 +1,10 @@
+@use "sass:color";
+@use "variables";
+
 .topics {
     &__heading {
-        color: $color__heading;
-        font-family: $font-family__header;
+        color: variables.$color__heading;
+        font-family: variables.$font-family__header;
         font-weight: 700;
         text-transform: uppercase;
     }
@@ -17,7 +20,7 @@
         margin: 0 .4em .4em 0;
 
         a {
-            $color__background: lighten(#135e13, 20%);
+            $color__background: color.adjust(#135e13, $lightness: 20%);
             background: linear-gradient(
                     to bottom,
                     $color__background 0%,
@@ -28,8 +31,8 @@
             display: block;
             padding: .2em .5em;
             text-decoration: none;
-            transition: background-size $time__transition-link-hover,
-                color $time__transition-link-hover;
+            transition: background-size variables.$time__transition-link-hover,
+                color variables.$time__transition-link-hover;
 
             &:hover {
                 background-size: 3px 3px;

@@ -1,16 +1,18 @@
+@use "variables";
+
 .article-crosslinks {
-    background: $color__text-background--highlight;
-    border-top: 1px solid $color__ui--light;
+    background: variables.$color__text-background--highlight;
+    border-top: 1px solid variables.$color__ui--light;
     padding: 1.4em 0;
 
     &__heading {
         box-sizing: border-box;
-        color: $color__heading;
-        font-family: $font-family__header;
+        color: variables.$color__heading;
+        font-family: variables.$font-family__header;
         font-weight: 700;
         text-transform: uppercase;
         margin: 0 auto;
-        max-width: $width__content;
+        max-width: variables.$width__content;
         padding: 0 1em;
     }
 
@@ -18,9 +20,9 @@
         display: grid;
         grid-gap: 1em;
         margin: 1em auto 0;
-        max-width: $width__content;
+        max-width: variables.$width__content;
 
-        @media (min-width: $breakpoint__screen--medium) {
+        @media (min-width: variables.$breakpoint__screen--medium) {
             grid-template-columns: 1fr 1fr 1fr;
         }
     }
@@ -28,23 +30,23 @@
     &__article {
         background: #fff;
         padding: 1em 1em 0;
-        outline: 1px solid $color__ui--light;
+        outline: 1px solid variables.$color__ui--light;
     }
 
     &__title {
-        font-family: $font-family__header;
+        font-family: variables.$font-family__header;
         line-height: 1.4;
         font-size: 1.2em;
         text-transform: uppercase;
 
         a {
             border-bottom: 2px solid transparent;
-            color: $color__heading;
+            color: variables.$color__heading;
             text-decoration: none;
-            transition: border-bottom-color $time__transition-link-hover;
+            transition: border-bottom-color variables.$time__transition-link-hover;
 
             &:hover {
-                border-bottom-color: $color__link-underline;
+                border-bottom-color: variables.$color__link-underline;
             }
         }
     }

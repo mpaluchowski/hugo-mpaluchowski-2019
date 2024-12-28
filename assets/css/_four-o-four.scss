@@ -1,4 +1,5 @@
-@import "variables";
+@use "sass:color";
+@use "variables";
 
 .four-o-four {
     align-items: center;
@@ -9,7 +10,7 @@
     padding: 0 1em;
 
     &__content {
-        max-width: $width__text;
+        max-width: variables.$width__text;
     }
 
     &__heading {
@@ -27,7 +28,7 @@
     }
 
     &__exit {
-        $color__background: lighten(#135e13, 20%);
+        $color__background: color.adjust(#135e13, $lightness: 20%);
         background: linear-gradient(
                 to bottom,
                 $color__background 0%,
@@ -38,8 +39,8 @@
         display: inline-block;
         padding: .2em .5em;
         text-decoration: none;
-        transition: background-size $time__transition-link-hover,
-        color $time__transition-link-hover;
+        transition: background-size variables.$time__transition-link-hover,
+        color variables.$time__transition-link-hover;
 
         &:hover {
             background-size: 3px 3px;
